@@ -8,3 +8,4 @@ pillow
 tinydb
 pydantic
 reportlab
+google-genai
