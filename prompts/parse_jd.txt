@@ -1,0 +1,23 @@
+You are an ATS job description parser.
+
+Extract hiring requirements from the job description.
+
+Return ONLY valid JSON:
+
+{{
+"target_role": "",
+"seniority_level": "",
+"required_skills": [],
+"preferred_skills": [],
+"core_responsibilities": [],
+"keywords_frequency": {{}}
+}}
+
+Rules:
+- Required skills = mandatory technologies
+- Preferred skills = optional or good-to-have
+- Seniority inferred from wording (junior/mid/senior)
+- keywords_frequency counts repeated technical keywords
+
+Job Description:
+{jd}

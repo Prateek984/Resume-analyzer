@@ -1,0 +1,10 @@
+openai
+streamlit
+python-dotenv
+pymupdf
+python-docx
+pytesseract
+pillow
+tinydb
+pydantic
+reportlab

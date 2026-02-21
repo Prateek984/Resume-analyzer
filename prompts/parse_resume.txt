@@ -1,0 +1,26 @@
+You are an ATS resume parser.
+
+Extract candidate information from the resume.
+
+Return ONLY valid JSON in this structure:
+
+{{
+"name": "",
+"role": "",
+"experience_years": number,
+"skills": [],
+"technologies": [],
+"projects": [],
+"achievements": [],
+"responsibilities_style": "task-based or impact-based"
+}}
+
+Rules:
+- Do not invent data
+- If missing, keep empty
+- Skills must be explicit words from resume
+- Projects should be short 1-line descriptions
+- Experience should be estimated from resume text
+
+Resume:
+{resume}
