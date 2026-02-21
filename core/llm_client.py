@@ -1,17 +1,21 @@
-import os
-from dotenv import load_dotenv
+import streamlit as st
 from openai import OpenAI
 
-import streamlit as st
-client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
-
-MODEL_NAME = "gpt-4o-mini"
+def get_client():
+    if "OPENAI_API_KEY" not in st.secrets:
+        return None
+    return OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 
 def ask_llm(prompt: str, temperature: float = 0.2) -> str:
+    client = get_client()
+
+    if client is None:
+        return "ERROR: API key not configured"
+
     try:
         response = client.chat.completions.create(
-            model=MODEL_NAME,
+            model="gpt-4o-mini",
             temperature=temperature,
             messages=[
                 {"role": "user", "content": prompt}
