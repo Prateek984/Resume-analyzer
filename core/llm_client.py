@@ -2,9 +2,8 @@ import os
 from dotenv import load_dotenv
 from openai import OpenAI
 
-load_dotenv()
-
-client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+import streamlit as st
+client = OpenAI(api_key=st.secrets["OPENAI_API_KEY"])
 
 MODEL_NAME = "gpt-4o-mini"
 
