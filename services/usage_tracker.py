@@ -1,6 +1,10 @@
 from tinydb import TinyDB, Query
 import uuid
 import streamlit as st
+import os
+
+# Ensure data directory exists (important for cloud)
+os.makedirs("data", exist_ok=True)
 
 db = TinyDB("data/usage.json")
 Users = Query()
